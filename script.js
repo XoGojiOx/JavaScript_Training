@@ -200,7 +200,7 @@ const fullAddress = `${restaurant.address}, ${restaurant.city}, ${restaurant.sta
 // For Loops
 // Repeat some functionality using a loop
 /* For Loop Syntax
-for ( 
+for (
     [initialExpression];
     [condition];
     incrementExpression]
@@ -252,7 +252,7 @@ for (let i = 0; i < animals.length; i++) {
 //* // (let i = animal.length -1 -> you put negative 1 as animal.length = number of items, this will be 1 more than the index, so we want to go -1 to end at the last item index */
 
 // NESTED LOOPS
-/* 
+/*
 let str = 'LOL';
 for (let i = 0; i <= 4; i++) {
     console.log(Outer:, i);
