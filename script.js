@@ -312,3 +312,100 @@ product *= arr[i][j] the [i] starts to access the array the [j] start to access 
 //   guess = prompt("Guess again: ");
 // }
 // console.log("Congrats");
+
+// FOR ......... OF LOOPS
+
+/* for (variable of iterable) {
+    statement
+}
+*/
+
+/* Example of using for statement
+const subreddits = ["cringe", "books", "chickens", "funny", "pics", "soccer"];
+
+for (let i = 0; i < subreddits.length; i++) {
+  console.log(`visit reddit.com/r/${subreddits[i]}`);
+}
+*/
+
+//Example of same thing but with for...of statement
+
+// const subreddits = ["cringe", "books", "chickens", "funny", "pics", "soccer"];
+
+// // I created sub to represent the objects within the array subreddits
+// for (let sub of subreddits) {
+//   console.log(sub);
+// }
+
+/* This code snippet is iterating over a 2D array called `seatingChart` using nested loops. */
+// const seatingChart = [
+//   ["kk", "ss", "dd"],
+//   ["kl", "uu", "ii"],
+//   ["qq", "ww", "ee"],
+// ];
+
+// // /* The code snippet `for (let i = 0; i < seatingChart.length; i++)` is setting up a loop to iterate
+// // over each element in the `seatingChart` array. It starts at index 0 and continues until it reaches
+// // the length of the `seatingChart` array. */
+// // for (let i = 0; i < seatingChart.length; i++) {
+// //   const row = seatingChart[i];
+// //   /* The code snippet `for (let j = 0; j < row.length; j++)` is setting up a loop to iterate over each
+// //   element in the inner array `row`. It starts at index 0 and continues until it reaches the length
+// //   of the inner array `row`. Inside the loop, `console.log(row[j])` is printing out each element of
+// //   the inner array `row` at index `j`. This allows you to access and display each individual element
+// //   within the nested arrays of the `seatingChart` array. */
+// //   for (let j = 0; j < row.length; j++) {
+// //     console.log(row[j]);
+// //   }
+// // }
+
+// for (let row of seatingChart) {
+//   for (let student of row) {
+//     console.log(student);
+//   }
+// }
+
+// you can for of over strings as shown below - this returns h e l l o  w o r l d
+// for (let char of "hello world") {
+//   console.log(char);
+// }
+
+// // FOR OF QUIZ
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// //asked to use a for of loop to print out each number squared
+// for (let num of numbers) {
+//   console.log(Math.pow(num, 2));
+// }
+
+// ITERATING OVER OBJECTS
+// Objects are objects! But they are not considered iterable!!!
+
+// const testScores = {
+//   keenan: 80,
+//   damon: 30,
+//   jake: 90,
+//   randy: 20,
+//   karla: 100,
+//   brittany: 99,
+//   susan: 1,
+// };
+// // // The below will pring out the students names only, not the scores
+// // for (let student in testScores) {
+// //   console.log(student);
+// // }
+// // // This is how you would print out the students name and scores
+// // for (let student in testScores) {
+// //   console.log(`${student} scored ${testScores[student]}`);
+// // }
+
+// /* NEW WAYS IN JAVASCRIPT TO ITERATE OVER AN OBJECT */
+// // console.log(Object.keys(testScores)); // This will return the student names
+// // console.log(Object.values(testScores)); // This will return the scores
+// // console.log(Object.entries(testScores)); // This will return a nested array of key: value pairs
+
+// let total = 0;
+// let scores = Object.values(testScores);
+// for (let score of scores) {
+//   total += score;
+// }
+// console.log(total / scores.length);
