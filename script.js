@@ -409,3 +409,76 @@ for (let i = 0; i < subreddits.length; i++) {
 //   total += score;
 // }
 // console.log(total / scores.length);
+
+/* FUNCTIONS! */
+
+/* Step 1 - Define the function
+
+function funcName() {
+    do something
+}
+
+*/
+
+// Example
+
+// function grumpus() {
+//   console.log("ugh...you again....");
+//   console.log("for the last time....");
+//   console.log("...LEAVE ME ALONE!");
+// }
+
+// grumpus();
+
+/* WRITING FUNCTIONS THAT ACCEPT INPUTS */
+
+// function avgNum(num1, num2) {
+//   console.log((num1 + num2) / avgNum.length);
+// }
+
+// function greet(name) {
+//   console.log(`Your name is ${name}`);
+// }
+
+// // avgNum(5, 10);
+
+// // greet("Steve");
+
+// greet("jake");
+
+/* TWO PARAMATER FUNCTIONS */
+
+// function greet(firstName, lastName) {
+//   console.log(
+//     `Good afternoon ${firstName}, I believe your last name starts with the letter ${lastName[0]}, is this correct?`
+//   );
+// }
+
+// greet("Jake", "State");
+
+// function repeater(str, rep) { // function called repeater with 2 parameters
+//   let result = ""; // setting variable result to hold our string
+//   for (let i = 0; i < rep; i++) { // i is set to run  while less than rep
+//     result += str; // each loop through adds the string to result
+//   }
+//   console.log(result); // i is no longer less than rep, prints out the sum of all loops
+// }
+
+// repeater("Cat", 10); // prints catcatcatcatcatcatcatcat
+// repeater("Ninja", 50); // prints Ninja*50
+
+// Dice Game Example
+
+function isSnakeEyes(num1, num2) {
+  let roll1 = Math.floor(Math.random() * num1) + 1;
+  let roll2 = Math.floor(Math.random() * num2) + 1;
+  if (roll1 === 1 && roll2 === 1) {
+    return `Snake Eyes! ${num1}, ${num2}`;
+  } else {
+    return `Not Snake Eyes! ${num1}, ${num2}`;
+  }
+}
+
+isSnakeEyes(6, 6);
+
+// use return to capture and store our result or output of the function
