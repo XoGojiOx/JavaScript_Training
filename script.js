@@ -469,16 +469,90 @@ function funcName() {
 
 // Dice Game Example
 
-function isSnakeEyes(num1, num2) {
-  let roll1 = Math.floor(Math.random() * num1) + 1;
-  let roll2 = Math.floor(Math.random() * num2) + 1;
-  if (roll1 === 1 && roll2 === 1) {
-    return `Snake Eyes! ${num1}, ${num2}`;
+// function isSnakeEyes(num1, num2) {
+//   let roll1 = Math.floor(Math.random() * num1) + 1;
+//   let roll2 = Math.floor(Math.random() * num2) + 1;
+//   if (roll1 === 1 && roll2 === 1) {
+//     return `Snake Eyes! ${num1}, ${num2}`;
+//   } else {
+//     return `Not Snake Eyes! ${num1}, ${num2}`;
+//   }
+// }
+
+// isSnakeEyes(6, 6);
+
+// use return to capture and store our result or output of the function
+// Return stops the execution of the function
+// return can only return one thing, it can be a object,
+// an array, or anything, but just one value as it
+// stops the exectuion of the function once it runs
+
+// function add(x, y) {
+//   if (typeof x !== "number" || typeof y !== "number") {
+//     return false;
+//   }
+//   let sum = x + y;
+//   return sum;
+// }
+
+/* REMEMBER ***FOR TYPEOF***
+typeof always returns a string!
+examples:
+typeof 42; returns 'number'
+typeof 'hello' returns 'string'
+typeof true; returns 'boolean'
+typeof {}; returns 'object'
+typeof []; returns 'object' (arrays are objects in javascript)
+typeof null; returns 'object' (a known bug in javascript)
+typeof function() {}; returns 'function'
+*/
+
+/*
+Coding Challenge
+Please write a function called lastElement which accepts a single array argument.
+The function should return the last element of the array (without removing the element).
+If the array is empty, the function should return null.
+
+lastElement([3,5,7]) //7
+lastElement([1]) //1
+lastElement([]) //null
+
+function lastElement(arr) {
+  if (arr.length === 0) {
+    return null;
   } else {
-    return `Not Snake Eyes! ${num1}, ${num2}`;
+    return arr[arr.length - 1];
   }
 }
 
-isSnakeEyes(6, 6);
+lastElement("jake");
+*/
 
-// use return to capture and store our result or output of the function
+/*
+Coding Challenge
+Define a function called capitalize that accepts a string argument and returns a new string
+with the first letter capitalized (but the rest of the string unchanged).  For example:
+
+capitalize('eggplant') // "Eggplant"
+capitalize('pamplemousse') // "Pamplemousse"
+capitalize('squid') //"Squid"
+*/
+
+// function capitalize(cap) {
+//   let firstCap = cap[0].toUpperCase(); // Takes the first letter of the word and capitalizes it and saves it as firstCap
+//   let restCap = cap.slice(1); // Takes the word and starting at index 1 or 2nd letter and takes the 2nd letter to end of word and saves it as restCap
+//   return firstCap + restCap; // combines (concats) the fristCap and restCap with no spaces giving you the word entered with a capital fist letter
+// }
+
+/* Sum Array Exercise
+Write a function called sumArray which accepts a single argument: an array of numbers.
+It should return the sum of all the numbers in the array.
+*/
+
+// function sumArray(nums) {
+//   let sum = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i];
+//   }
+//   return sum;
+// }
