@@ -612,15 +612,429 @@ function returnDay(num) {
 /* The function does not have a name, just (). The name is the variable name */
 
 /* Passing a function within a function */
-function rollDie() {
-  let roll = Math.floor(Math.random() * 6) + 1;
-  console.log(roll);
-}
+// function rollDie() {
+//   let roll = Math.floor(Math.random() * 6) + 1;
+//   console.log(roll);
+// }
 
-function timesTen(t) {
-  for (let i = 0; i < 10; i++) {
-    t();
-  }
-}
+// function evisMom() {
+//   console.log('good moring evi"s mom');
+// }
 
-timesTen(rollDie);
+// function timesTen(t) {
+//   for (let i = 0; i < 10; i++) {
+//     t();
+//   }
+// }
+
+// timesTen(evisMom);
+
+/* DEFINING METHODS */
+// We can add functions as properties on objects. We call them methods.
+//Examples
+// const math = {
+//   multiply: function (x, y) {
+//     return x * y;
+//   },
+//   divide: function (x, y) {
+//     return x / y;
+//   },
+//   square: function (x) {
+//     return x * x;
+//   },
+// };
+// // Can call the function like you do string methods with a .
+// // math.multiple(2, 5); This will run the multiply function and give us 10
+// math.multiply(2, 5);
+
+/* CALLING METHODS NEW SHORT HAD WAY */
+// const math = {
+//   add(x, y) {
+//     return x + y;
+//   },
+//   multiply(x, y) {
+//     return x * y;
+//   },
+//   divide(x, y) {
+//     return x / y;
+//   },
+//   square(x) {
+//     return x * x;
+//   },
+//   cube(x) {
+//     return x * x * x;
+//   },
+// };
+
+/* THE KEYWORD 'THIS' IN JAVASCRIPT */
+// const cat = {
+//   // the word 'THIS' refers to cat as the object itself
+//   name: "blue steele",
+//   color: "grey",
+//   breed: "scottish fold",
+//   meow() {
+//     console.log(`${this.name} really likes steak`); // I can use this.breed or this.name to get those values of the keys
+//   },
+// };
+
+/* USING TRY / CATCH */
+// If you think that an error could happen in a part of the code, you can use grab to try and catch it.
+// try {
+//   hello.toUpperCase();
+// } catch {
+//   console.log("ERROR!!!!"); // This will catch it and output the Error!!!
+// }
+// // This will get handy when working with API's and so forth coming up
+// (e) <= this will return the error that was caught, you can console.log or return it if you want to
+/* ANOTHER EXAMPLE */
+// function yell(msg) {
+//   try {
+//     console.log(msg.toUpperCase().repeat(3));
+//   } catch {
+//     console.log(`Please enter a string next time!`);
+//   }
+// }
+
+/* ARRAY CALLBACK METHODS */
+/* ForEach, Map, Some & Every, Arrow Functions, Filter, Reduce */
+
+/* ForEach */ //Allows us to run some code for each item in an array
+// const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+// nums.forEach(function (n) {
+//   console.log(n * n);
+// });
+
+// nums.forEach(function (el) {
+//   if (el % 2 === 0) {
+//     console.log(el);
+//   }
+// });
+
+// You can also us the FOR OF to print out the items in the array
+// for (let el of nums) {
+//   console.log(el);
+// }
+// More Complicated Example
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 98,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 89,
+//   },
+// ];
+
+// movies.forEach(function (n) {
+//   console.log(`The movie ${n.title} scored ${n.score}`);
+// });
+
+/* THE MAP METHOD */
+// Creates a new array with the results of calling a callback on every element in the array
+/* FIRST EXAMPLE */
+// const texts = ["hi", "bye", "maybe", "leave me alone", "loveis"];
+// const caps = texts.map(function (t) {
+//   return t.toUpperCase();
+// });
+// texts; // returns ['hi', 'bye', 'maybe', 'leave me alone', 'loveis']
+// caps; //returns ['HI', 'BYE', 'MAYBE', 'LEAVE ME ALONE', LOVIES']
+/* ANOTHER EXAMPLE */
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const even = numbers.map(function (n) {
+//   if (n % 2 === 0) {
+//     return n;
+//   }
+// });
+/* USING MOVIES AGAIN FOR EXAMPLE */
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 98,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 89,
+//   },
+// ];
+
+// const title = movies.map(function (movie) {
+//   return movie.title;
+// });
+// //When calling TITLE it will return ['Amadeus', 'Stand by Me', 'Parasite', 'Freak']
+
+/* ARROW FUNCTIONS */
+//syntactically compact alternative to a regular function expression
+/*Example*/
+// const square = (x) => { // with a single paramater you are able to write it without the () but only for a single paramater!
+//   return x * x; // returns x * x
+// };
+
+// const sum = (x) => {
+//   return x + x; // returns x + x
+// };
+// // sum(4) returns 8
+// // square(4) returns 16
+
+// const sub = (x, y) => { // Cannot wirte this without () because there are two paramaters.
+//   return x - y;
+// };
+
+// const rollDie = () => { // abel to make the arrow function without a paramater
+//   return Math.floor(Math.random() * 6) + 1;
+// };
+
+// /* Practice arrow functions with .MAP */
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 98,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 89,
+//   },
+// ];
+
+// const title = movies.map(movie) => { // COULD NOT GET THIS TO WORK
+//   return movie.title;
+// }
+
+// /* IMPLICIT RETURN */ // only work if there is one value in the body of the function
+// const isEven = function (num) {
+//   // regular function expression
+//   return num % 2 === 0;
+// };
+// const isEven = (num) => {
+//   // arrow function with parens around param
+//   return num % 2 === 0;
+// };
+// const isEven = (num) => num % 2 === 0;
+// // arrow function without brackets and without return
+
+/* Using math and for each with implicit arrow functions */
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 98,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 89,
+//   },
+// ];
+// // Old way to write it
+// // const newMovies = movies.map = function (movie) {
+// //   return `${movie.title} - ${movie.score / 10}`
+// // }
+
+// const newMovies = movies.map((movie) => {
+//   `${movie.title} - ${movie.score / 10}`;
+// });
+
+/* setTimeout and setInterval */
+//setTimeout
+//Expects you to pass a callback and a number of seconds to delay
+// setTimeout(() => {
+//   console.log`hello`;
+// }, 3000); // The browser will wait 3 seconds then run the function printing 'hello'
+// console.log(`Hello!`);
+// setTimeout(() => {
+//   console.log(`Are you still there?`);
+// }, 3000); // This will print Hello right away and after 3 seconds it will print are you still there?
+
+// // setINTERVAL
+// const id = setInterval(() => {
+//   // CONST ID***  you can use clearInterval(id) to stop the intervals from continuing
+//   console.log(Math.random());
+// }, 2000);
+// clearInterval(id) // Stops the setInterval
+
+/* FILTER */
+// Creates a new array with all elements that pass the test implemented by the provided function
+// const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+// const odds = nums.filter((n) => {
+//   return n % 2 === 1; //our callback returns true or false
+//   //if it returns true n is added to the filtered array
+// });
+// const evens = nums.filter((n) => {
+//   return n % 2 === 0;
+// });
+// const smallNums = nums.filter((n) => {
+//   return n < 5;
+// });
+// // const largeNums = nums.filter((n) => {
+// //   return n >= 5;
+// // });
+// const largeNums = nums.filter((n) => n >= 5); //written as a short hand arrow function
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 65,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 40,
+//   },
+// ];
+
+// const aboveAverage = movies.filter((n) => n.score > 75); // give an array of movies with scores above 75
+// const aboveAverageTitles = aboveAverage.map((n) => n.title); // gives an array with the titels in aboveAverage
+// // The below takes ^^^ and makes it into one function
+// const aboveAvgTitles = movies.filter((n) => n > 75).map((n) => n.title);
+
+// const belowAverage = movies.filter((n) => n.score < 75);
+// const moviesStartWithA = movies.filter((n) => n.title[0] === "A"); // returns movies that start with the letter A
+
+/* Filter Method Quit */
+// Let's get some practice using the filter method. Write a function called validUserNames that accepts an array of usernames (strings). It should return a new array, containing only
+// the usernames that are less than 10 characters.
+//Solution #1:
+// function validUserNames(arr) {
+//   const filteredArr = arr.filter(function (name) {
+//     return name.length < 10;
+//   });
+//   return filteredArr;
+// }
+
+// //Solution #2:
+// function validUserNames(arr) {
+//   return arr.filter((name) => name.length < 10);
+// }
+
+// //Solution #3:
+// const validUserNames = (usernames) =>
+//   usernames.filter((usr) => usr.length < 10);
+
+/* EVERY */ // Returns a true of false based on every element in the array
+// const words = [
+//   "dog",
+//   "cat",
+//   "turtle",
+//   "pig",
+//   "chicken",
+//   "rooster",
+//   "geese",
+//   "duck",
+// ];
+
+// words.every((word) => {
+//   return word.length === 3;
+// }); // will return fast as not ever word in the array is 3 in length
+
+// word.every((word) => word[0] === "d"); // returns false as not every first letter is 'd'
+
+// words.every((w) => {
+//   let last_letter = w[w.length - 1];
+//   return last_letter === "g";
+// }); // will return false as not every element ends in 'g'
+
+// const exams = [90, 80, 88, 75, 89, 99, 94, 98, 94, 88, 82, 77, 79, 100];
+// //passing score is 75
+
+// exams.every((score) => score >= 75);
+
+/* SOME */
+//Some is the exact same as every, but it is going to see if any of the elements that match our criteria
+/* QUIZ */
+//Define a function called allEvens that accepts a single array of numbers. If the array contains all even numbers, return true. Otherwise, return false.
+// const allEvens = n => n.every(num => num % 2 === 0);
+
+/* REDUCE */
+// Executes a reducer function on each element of the array, resulting in a single value.
+// accumultor will hold sum (first paramater)
+// currentvalue holds each individual element (second paramater)
+
+// const prices = [9.99, 1.5, 19.99, 49.99, 30.5];
+
+// /* Adding Values using Reduce */
+// // const total = prices.reduce((total, price) => {
+// //   // first go will add 9.99 and 1.50, 2nd will take that sum + 19.99 and so forth until array is reached.
+// //   return total + price; // returns 111.97
+// // });
+
+// // /* Writing the above with a for statement */ //old way of doing it
+// // // let total = 0;
+// // for (let price of prices) {
+// //   total += price;
+// // }
+// // console.log(total);
+
+// /* Finding lowest value using reduce */
+// const minimum = prices.reduce((min, price) => {
+//   if (price < min) {
+//     return price;
+//   } else {
+//     return min;
+//   }
+// });
+
+/* Movie Example */
+//Finding the highest rated movie
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     score: 65,
+//   },
+//   {
+//     title: "Parasite",
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     score: 40,
+//   },
+// ];
+
+// const highestRated = movies.reduce((high, score) => {
+//   if (score.score > high.score) {
+//     return score;
+//   } else {
+//     return high;
+//   }
+// });
