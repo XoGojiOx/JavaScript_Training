@@ -1038,3 +1038,133 @@ function returnDay(num) {
 //     return high;
 //   }
 // });
+
+/* NEW JAVASCRIPT FEATURES */
+
+// DEFAULT PARAMS - important
+// //// The Old Way:
+// function multiply(a, b) {
+//   b !== "undefined";
+//   return a * b;
+// }
+
+// //// New Way:
+// function multiply(a, b = 1) { // a has no default value, b will default to 1 if no value is input by user
+//   return a * b;
+// }
+
+// ////Roll Die Example
+// function rollDie(numSides = 6) { // If user does not input a number, the number of sides default to 6
+//   return Math.floor(Math.random() * numSides) + 1;
+// }
+
+// SPREAD IN FUNCTION CALLS - important
+// const nums = [12, 13, 14, 15, 15, 16, 17, 18, 1, 2, 3, 4, 5, 6, 7, 9, 2999];
+// Math.max(...nums); /// seperates the elements into arguments and allows Math.max to find the maximum element
+
+// SPREAD WITH ARRAY LITERALS - crucial
+// const cats = ["little", "jack", "steve"];
+// const dogs = ["blue", "max", "jim"];
+// const allPets = [...cats, ...dogs]; // creates a new array containin both elements in cats and dogs
+
+// SPREAD WITH OBJECTS - crucial // copies properties from one object into another object literal
+// const feline = { legs: 4, family: "Felidae" };
+// const canine = { isFurry: true, family: "Caninae" };
+
+// const animals = { ...feline, ...canine };
+// //// we will use this when creating copies of an object
+// //// will use this as well for taking info from a submission like a website signup and add an id and so forth to it and then store it
+// //// ^ example
+// const dataFromSubmission = {
+//   email: "xogojiox@gmail.com",
+//   password: "Highheat4!",
+//   username: "rsanders4",
+// };
+// const usableData = { ...dataFromSubmission, id: "goji", isAdmin: false };
+
+// // REST PARAMS - important
+// function sum(...nums) {
+//   return nums.reduce((total, el) => total + el); //Will go over each number input by user and add them all together
+// }
+
+// DESTRUCTURING ARRAYS - crucial
+// const scores = [999999, 999998, 999997, 999996, 999995, 999994, 999993];
+// // I want to take the first and second sore and seperate them into seperate variables for high score and second high score
+// const highScore = scores[0]; // takes the 1st score in the array
+// const secondHighScore = scores[1]; // takes the 2nd score in the array
+// //^^^^^^^ this works but there is a faster way using destructuring which will show below
+// const [gold, silver, ...losers] = scores; // this takes the first number and sets to gold, 2nd to silver. Does not change scores at all, but creates new vairables
+// // ^^^ the ...losers takes the rest of the values and assignes them to the vairable losers
+// // DESTRUCTURING OBJECTS - crucial
+
+// const dataFromSubmission = {
+//   email: "xogojiox@gmail.com",
+//   password: "Highheat4!",
+//   username: "rsanders4",
+// };
+// Below you will see we are destructuring the object and assigning the values to their own variables
+// const { email, password, username } = dataFromSubmission; // !! the variable has to be a key that is in the object: for example email for email
+// const { email: gojiEmail, password, username: goji } = dataFromSubmission; // using : will allow you to rename to key to the variable name you want
+// ^^ to call the variable you need to use the new variable name such as gojiEmail, not email
+// const {email, password, username, address = NA} = dataFromSubmission // the address = NA is the default value for address since there is no address in the object. if address is called, NA will be returned.
+// DESTRUCTURING PARAMS - crucial
+
+// const user = {
+//   email: "xogojiox@gmail.com",
+//   password: "Highheat4!",
+//   username: "rsanders4",
+//   firstName: "Richard",
+//   lastName: "Sanders",
+// };
+
+// // function fullName(user) {
+// //   return `${user.firstName} ${user.lastName}`; // <<< old way of writing a function to get data from
+// // }
+
+// // function fullName(user) {
+// //   const { firstName, lastName } = user; // This creates two variables, firstName and lastName and assignes them their value in the object
+// //   return `${firstName} ${lastName}`; // Now we can return without having to use user.firstName and so on
+// // }
+
+// function fullName({ firstName, lastName }) {
+//   // do not have to  type user here, it is expecting an object and finds the values within
+//   return `${firstName} ${lastName}`; // returns Richard Sanders
+// }
+
+// const movies = [
+//   {
+//     title: "Amadeus",
+//     year: 1995,
+//     score: 99,
+//   },
+//   {
+//     title: "Stand by me",
+//     year: 1990,
+//     score: 98,
+//   },
+//   {
+//     title: "Parasite",
+//     year: 1980,
+//     score: 90,
+//   },
+//   {
+//     title: "Freak",
+//     year: 1978,
+//     score: 89,
+//   },
+// ];
+
+// movies.filter((movie) => movie.score >= 95); // pulling scores above or equal to 95 from movies object
+
+// movies.filter(({ score }) => score >= 90); // destructuring movies on the way into the function for score
+
+// movies.map((movie) => {
+//   return `${movie.title} (${movie.year}) is rated ${movie.score}`; // long way of returning the template literal to the left
+// });
+
+// movies.map(({ title, year, score }) => { // destructuring object movies on my way into the function
+//   return `${title} (${year}) is rated ${score}`; // I do not have to  use movie.title, year ect.
+// });
+
+/* Introduction to the DOM */
+// Document Object Model
