@@ -1168,3 +1168,7 @@ function returnDay(num) {
 
 /* Introduction to the DOM */
 // Document Object Model
+/* WHAT IS IT? The DOM is a JavaScript representation of a webpage. It's your JS 'window' into the contents of a webpage
+It's just a bunch of objects tht you can interact with via JS. */
+// Every single HTML and CSS property that goes in (H1, body, ul, li, ect,) gets its own JavaScript Object
+//console.dir(document) > will allow you to see everything on the webpage
