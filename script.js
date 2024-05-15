@@ -1172,3 +1172,14 @@ function returnDay(num) {
 It's just a bunch of objects tht you can interact with via JS. */
 // Every single HTML and CSS property that goes in (H1, body, ul, li, ect,) gets its own JavaScript Object
 //console.dir(document) > will allow you to see everything on the webpage
+
+/* getElementById */
+// selecting an object and manipulate it with JS
+// syntax is => document.getElementByID(id);
+// Example => var element = document.getElementById(id);
+// i can then (in the console) console.dir(element) and get the object properties
+
+/* getElementsByTagName */
+//syntax => var elements = document.getElementsByTagName('name');
+// ^^ returns to us an HTML collection
+/* getElementsByClassName */
